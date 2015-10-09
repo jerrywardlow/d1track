@@ -15,8 +15,8 @@ su vagrant -c 'createdb trackdb'
 
 echo 'cd /vagrant' > /home/vagrant/.bash_profile
 
-vagrantTip="[36m[1mThis is a placeholder for the MOTD[m"
-echo -e $vagrantTip > /etc/motd
+MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
+echo -e $MOTDblast > /etc/motd
 
 if [ ! -f /home/vagrant/.bash_profile ]; then
   ln -s /vagrant/.bash_profile /home/vagrant/.bash_profile
