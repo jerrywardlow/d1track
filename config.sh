@@ -13,7 +13,7 @@ su postgres -c 'createuser -dRS vagrant'
 su vagrant -c 'createdb'
 su vagrant -c 'createdb trackdb'
 
-echo 'cd /vagrant' > /home/vagrant/.bash_profile
+echo 'cd /vagrant' > /home/vagrant/.bash_profile # This line tells where Vagrant should head to after 'vagrant ssh'
 
 MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
 echo -e $MOTDblast > /etc/motd
