@@ -3,10 +3,10 @@ apt-get -qqy install postgresql python-psycopg2
 apt-get -qqy install python-pip
 
 pip install flask
-pip install sqlalchemy
+pip install Flask-SQLAlchemy
+pip install Flask-WTF
 pip install requests
 pip install httplib2
-pip install flask-seasurf
 pip install pyimgur
 
 su postgres -c 'createuser -dRS vagrant'
