@@ -51,6 +51,15 @@ class Zone(db.Model):
     name = db.Column(db.String)
     photo = db.Column(db.String)
     location_id = db.Column(db.Integer, ForeignKey('locations.id'))
-    
+
     def __repr__(self):
         return '<Zone %r>' % (self.name)
+
+class Anchor(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String)
+    zone_id = db.Column(db.Integer, db.ForeignKey('zones.id'))
+    zone = relationship(Zone)
+    # style_id = db.Column(db.Integer)
+    # draw_id = db.Column(db.Integer)
+    # rope_id = db.Column(db.Integer)
