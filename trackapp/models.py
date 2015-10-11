@@ -66,6 +66,9 @@ class Anchor(db.Model):
     # draw_id = db.Column(db.Integer)
     # rope_id = db.Column(db.Integer)
 
+    def __repr__(self):
+        return '<Anchor %r>' % (self.name)
+
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
