@@ -2,7 +2,7 @@ from . import db
 
 from datetime import datetime
 
-class Location(Base):
+class Location(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
     photo = db.Column(db.String)
@@ -41,7 +41,16 @@ class Address(db.Model):
     phone = db.Column(db.String) # Can expand to a phone table for multiples
     email = db.Column(db.String) # Can expand to email table for multiples
     website = db.Column(db.String)
-    location_id = db.Column(db.Integer, db.ForeignKey('locations.id'))
+    location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
 
     def __repr__(self):
         return '<Address ID: %r>' % (self.id)
+
+class Zone(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String)
+    photo = db.Column(db.String)
+    location_id = db.Column(db.Integer, ForeignKey('locations.id'))
+    
+    def __repr__(self):
+        return '<Zone %r>' % (self.name)
