@@ -18,6 +18,9 @@ class User(db.Model):
     created_on = db.Column(db.DateTime, default=datetime.now)
     # Need to add homegym_id relationship to Location
 
+    def __repr__(self):
+        return '<User %r>' % (self.username)
+
 class Address(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     address1 = db.Column(db.String)
@@ -28,4 +31,7 @@ class Address(db.Model):
     phone = db.Column(db.String) # Can expand to a phone table for multiples
     email = db.Column(db.String) # Can expand to email table for multiples
     website = db.Column(db.String)
-    location_id = db.Column(db.Integer, ForeignKey('locations.id'))
+    location_id = db.Column(db.Integer, db.ForeignKey('locations.id'))
+
+    def __repr__(self):
+        return '<Address ID: %r>' % (self.id)
