@@ -81,3 +81,6 @@ class Route(db.Model):
     last_update = db.Column(db.DateTime, default = datetime.now, onupdate = datetime.now)
     color = db.Column(db.String)
     photo = db.Column(db.String)
+
+# class Sesh
+# class Climb
