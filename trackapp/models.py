@@ -51,7 +51,7 @@ class Zone(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
     photo = db.Column(db.String)
-    location_id = db.Column(db.Integer, ForeignKey('locations.id'))
+    location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     location = db.relationship(Location)
 
     def __repr__(self):
@@ -60,7 +60,7 @@ class Zone(db.Model):
 class Anchor(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
-    zone_id = db.Column(db.Integer, db.ForeignKey('zones.id'))
+    zone_id = db.Column(db.Integer, db.ForeignKey('zone.id'))
     zone = db.relationship(Zone)
     # style_id = db.Column(db.Integer)
     # draw_id = db.Column(db.Integer)
@@ -72,9 +72,9 @@ class Anchor(db.Model):
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
-    anchor_id = db.Column(db.Integer, db.ForeignKey('anchors.id'))
+    anchor_id = db.Column(db.Integer, db.ForeignKey('anchor.id'))
     anchor = db.relationship(Anchor)
-    location_id = db.Column(db.Integer, db.ForeignKey('locations.id'))
+    location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     location = db.relationship(Location)
     defined_grade = db.Column(db.Integer)
     length = db.Column(db.Integer)
