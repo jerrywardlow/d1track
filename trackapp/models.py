@@ -2,10 +2,10 @@ from . import db
 
 from datetime import datetime
 
-class User(db.model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
-    email = db.Column(db.String), unique=True)
+    email = db.Column(db.String, unique=True)
     fullname = db.Column(db.String)
     usertype = db.Column(db.Integer, default=1)
     password = db.Column(db.String)
