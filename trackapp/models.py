@@ -2,6 +2,11 @@ from . import db
 
 from datetime import datetime
 
+class Location(Base):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String)
+    photo = db.Column(db.String)
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
@@ -13,10 +18,12 @@ class User(db.Model):
     height = db.Column(db.Float(precision=2)) # Centimeters
     wingspan = db.Column(db.Float(precision=2)) # Centimeters
     shoesize = db.Column(db.Float(precision=1)) # European sizing
+    # homegym_id = Column(Integer, ForeignKey('locations.id'))
+    # homegym = relationship(Location)
     photo = db.Column(db.String)
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
-    # Need to add homegym_id relationship to Location
+    # Need to update homegym_id relationship to Location
 
     def __repr__(self):
         return '<User %r>' % (self.username)
