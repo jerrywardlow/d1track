@@ -85,5 +85,8 @@ class Route(db.Model):
     color = db.Column(db.String)
     photo = db.Column(db.String)
 
+    def __repr__(self):
+        return '<Route: %r>' % (self.name)
+
 # class Sesh
 # class Climb
