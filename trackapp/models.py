@@ -7,6 +7,9 @@ class Location(Base):
     name = db.Column(db.String)
     photo = db.Column(db.String)
 
+    def __repr__(self):
+        return '<Location %r' % (self.name)
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
