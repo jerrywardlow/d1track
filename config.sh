@@ -5,6 +5,7 @@ apt-get -qqy install python-pip
 pip install flask
 pip install Flask-SQLAlchemy
 pip install Flask-WTF
+pip install Flask-SuperAdmin
 pip install requests
 pip install httplib2
 pip install pyimgur
