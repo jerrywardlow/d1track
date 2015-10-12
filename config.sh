@@ -14,6 +14,8 @@ su postgres -c 'createuser -dRS vagrant'
 su vagrant -c 'createdb'
 su vagrant -c 'createdb trackdb'
 
+su vagrant -c 'python db_populator.py'
+
 echo 'cd /vagrant' > /home/vagrant/.bash_profile # This line tells where Vagrant should head to after 'vagrant ssh'
 
 MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
