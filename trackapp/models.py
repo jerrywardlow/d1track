@@ -88,5 +88,17 @@ class Route(db.Model):
     def __repr__(self):
         return '<Route: %r>' % (self.name)
 
-# class Sesh
+class Sesh(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship(User)
+    location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
+    location = db.relationship(Location)
+    # climbed_with = db.Column(db.Integer)
+    user_rating = db.Column(db.Integer)
+    photo = db.Column(db.String)
+
+    def __repr__(self):
+        return '<Sesh: %r>' % (self.id)
+
 # class Climb
