@@ -101,4 +101,18 @@ class Sesh(db.Model):
     def __repr__(self):
         return '<Sesh: %r>' % (self.id)
 
-# class Climb
+class Climb(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship(User)
+    sesh_id = db.Column(db.Integer, db.ForeignKey('seshs.id'))
+    sesh = db.relationship(Sesh)
+    route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
+    route = db.relationship(Route)
+    success = db.Column(db.Boolean)
+    user_grade = db.Column(db.Integer)
+    user_rating = db.Column(db.Integer)
+    comment = db.Column(db.String)
+
+    def __repr__(self):
+        return '<Climb %r:>' % (self.id)
