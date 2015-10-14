@@ -14,4 +14,12 @@ import trackapp.models
 import trackapp.forms
 
 admin = Admin(app)
+
+admin.register(models.Location, session=db.session)
 admin.register(models.User, session=db.session)
+admin.register(models.Address, session=db.session)
+admin.register(models.Zone, session=db.session)
+admin.register(models.Anchor, session=db.session)
+admin.register(models.Route, session=db.session)
+admin.register(models.Sesh, session=db.session)
+admin.register(models.Climb, session=db.session)
