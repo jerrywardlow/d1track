@@ -21,12 +21,12 @@ class User(db.Model):
     height = db.Column(db.Float(precision=2)) # Centimeters
     wingspan = db.Column(db.Float(precision=2)) # Centimeters
     shoesize = db.Column(db.Float(precision=1)) # European sizing
-    # homegym_id = Column(Integer, ForeignKey('locations.id'))
-    # homegym = db.relationship(Location)
+    homegym_id = db.Column(db.Integer, db.ForeignKey('location.id'))
+    homegym = db.relationship(Location)
     photo = db.Column(db.String)
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
-    # Need to update homegym_id db.relationship to Location
+
 
     def __repr__(self):
         return '<User %r>' % (self.username)
