@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.superadmin import Admin
 
 app = Flask(__name__, instance_relative_config=True)
 
@@ -11,3 +12,6 @@ db = SQLAlchemy(app)
 import trackapp.views
 import trackapp.models
 import trackapp.forms
+
+admin = Admin(app)
+admin.register(models.User, session=db.session)
