@@ -27,7 +27,6 @@ class User(db.Model):
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
 
-
     def __repr__(self):
         return '<User %r>' % (self.username)
 
@@ -103,11 +102,11 @@ class Sesh(db.Model):
 
 class Climb(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship(User)
-    sesh_id = db.Column(db.Integer, db.ForeignKey('seshs.id'))
+    sesh_id = db.Column(db.Integer, db.ForeignKey('sesh.id'))
     sesh = db.relationship(Sesh)
-    route_id = db.Column(db.Integer, db.ForeignKey('routes.id'))
+    route_id = db.Column(db.Integer, db.ForeignKey('route.id'))
     route = db.relationship(Route)
     success = db.Column(db.Boolean)
     user_grade = db.Column(db.Integer)
