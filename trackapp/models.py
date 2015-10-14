@@ -8,7 +8,7 @@ class Location(db.Model):
     photo = db.Column(db.String)
 
     def __repr__(self):
-        return '<Location %r' % (self.name)
+        return '<Location: %r>' % (self.name)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -28,7 +28,7 @@ class User(db.Model):
     created_on = db.Column(db.DateTime, default=datetime.now)
 
     def __repr__(self):
-        return '<User %r>' % (self.username)
+        return '<User: %r>' % (self.username)
 
 class Address(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -54,7 +54,7 @@ class Zone(db.Model):
     location = db.relationship(Location)
 
     def __repr__(self):
-        return '<Zone %r>' % (self.name)
+        return '<Zone: %r>' % (self.name)
 
 class Anchor(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -66,7 +66,7 @@ class Anchor(db.Model):
     # rope_id = db.Column(db.Integer)
 
     def __repr__(self):
-        return '<Anchor %r>' % (self.name)
+        return '<Anchor: %r>' % (self.name)
 
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -114,4 +114,4 @@ class Climb(db.Model):
     comment = db.Column(db.String)
 
     def __repr__(self):
-        return '<Climb %r:>' % (self.id)
+        return '<Climb: %r>' % (self.id)
