@@ -7,6 +7,7 @@ pip install flask
 pip install Flask-SQLAlchemy
 pip install Flask-WTF
 pip install Flask-SuperAdmin
+pip install flask-login
 pip install requests
 pip install httplib2
 pip install pyimgur
