@@ -73,8 +73,8 @@ class Route(db.Model):
     name = db.Column(db.String)
     anchor_id = db.Column(db.Integer, db.ForeignKey('anchor.id'))
     anchor = db.relationship(Anchor)
-    location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
-    location = db.relationship(Location)
+    # location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
+    # location = db.relationship(Location)
     defined_grade = db.Column(db.Integer)
     length = db.Column(db.Integer)
     # setter_id = db.Column(db.Integer)
@@ -102,8 +102,8 @@ class Sesh(db.Model):
 
 class Climb(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship(User)
+    # user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    # user = db.relationship(User)
     sesh_id = db.Column(db.Integer, db.ForeignKey('sesh.id'))
     sesh = db.relationship(Sesh)
     route_id = db.Column(db.Integer, db.ForeignKey('route.id'))
