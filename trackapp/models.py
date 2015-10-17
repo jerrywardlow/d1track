@@ -50,6 +50,7 @@ class Address(db.Model):
 class Zone(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
+    description = db.Column(db.String)
     photo = db.Column(db.String)
     location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     location = db.relationship(Location)
