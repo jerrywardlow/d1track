@@ -61,6 +61,7 @@ class Zone(db.Model):
 class Anchor(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
+    description = db.Column(db.String)
     zone_id = db.Column(db.Integer, db.ForeignKey('zone.id'))
     zone = db.relationship(Zone)
     # style_id = db.Column(db.Integer)
