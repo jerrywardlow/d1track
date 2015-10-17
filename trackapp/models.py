@@ -100,6 +100,7 @@ class Sesh(db.Model):
     location = db.relationship(Location)
     # climbed_with = db.Column(db.Integer)
     user_rating = db.Column(db.Integer)
+    comment = db.Column(db.String)
     photo = db.Column(db.String)
 
     def __repr__(self):
