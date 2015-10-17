@@ -24,6 +24,7 @@ class User(db.Model):
     shoesize = db.Column(db.Float(precision=1)) # European sizing
     homegym_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     homegym = db.relationship(Location)
+    blurb = db.Column(db.String)
     photo = db.Column(db.String)
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
