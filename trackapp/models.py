@@ -5,6 +5,7 @@ from datetime import datetime
 class Location(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
+    description = db.Column(db.String)
     photo = db.Column(db.String)
 
     def __repr__(self):
