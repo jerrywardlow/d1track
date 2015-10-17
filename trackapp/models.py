@@ -75,6 +75,7 @@ class Anchor(db.Model):
 class Route(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String)
+    description = db.Column(db.String)
     anchor_id = db.Column(db.Integer, db.ForeignKey('anchor.id'))
     anchor = db.relationship(Anchor)
     # location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
