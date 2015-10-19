@@ -14,6 +14,7 @@ pip install pyimgur
 
 # Create Postgres user Vagrant and create 'trackdb' database
 su postgres -c 'createuser -dRS vagrant'
+su postgres -c "psql -c \"CREATE USER flaskapp with password 'flaskypassy';\""
 su vagrant -c 'createdb'
 su vagrant -c 'createdb trackdb'
 
