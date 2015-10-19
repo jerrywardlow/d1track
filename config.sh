@@ -14,6 +14,16 @@ pip install requests
 pip install httplib2
 pip install pyimgur
 
+# Copy vagrant shared directory to /var/www/u2track
+mkdir /var/www/u2track
+cp -r /vagrant/* /var/www/u2track
+
+# Overwrite mod-wsgi configuration with custom configuration
+cp /var/www/u2track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf
+
+# Restart Apache
+apache2ctl restart
+
 # Create Postgres user Vagrant and create 'trackdb' database
 su postgres -c 'createuser -dRS vagrant'
 su postgres -c "psql -c \"CREATE USER flaskapp with password 'flaskypassy';\""
