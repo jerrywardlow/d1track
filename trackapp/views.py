@@ -7,7 +7,11 @@ from .models import Location, User, Address, Zone, Anchor, Route
 @app.route('/')
 @app.route('/index/')
 def index():
-    return "Everything seems fine..."
+    user = User.query.get(1)
+    locations = Location.query.order_by(Location.name).limit(5).all()
+    return render_template('index.html',
+                            user = user,
+                            locations = locations)
 
 @app.route('/location/<int:location_id>/')
 def location_home(location_id):
