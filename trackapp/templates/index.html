@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+<h2>Popular Locations</h2>
+<hr>
+
+<div class="col-sm-4">
+    {% for location in locations %}
+    <a href='{{url_for('location_home', location_id = location.id)}}'>{{location.name}}</a>
+    <p>{{location.description}}</p>
+    </br>
+    {% endfor%}
+</div>
+
+{% endblock %}
