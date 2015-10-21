@@ -1,3 +1,5 @@
+from flask import render_template
+
 from trackapp import app
 
 @app.route('/')
