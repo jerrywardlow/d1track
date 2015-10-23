@@ -103,6 +103,7 @@ class Sesh(db.Model):
     user_rating = db.Column(db.Integer)
     comment = db.Column(db.String)
     photo = db.Column(db.String)
+    # date = db.Column(db.DateTime, default = datetime.now)
 
     def __repr__(self):
         return '<Sesh: %s>' % (self.id)
