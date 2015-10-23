@@ -8,9 +8,11 @@ from .models import Location, User, Address, Zone, Anchor, Route
 @app.route('/index/')
 def index():
     user = User.query.get(1)
+    climbs = Climb.query.all()
     locations = Location.query.order_by(Location.name).limit(5).all()
     return render_template('index.html',
                             user = user,
+                            climbs = climbs,
                             locations = locations)
 
 @app.route('/location/<int:location_id>/')
