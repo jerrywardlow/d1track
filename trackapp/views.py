@@ -2,7 +2,7 @@ from flask import render_template
 
 from trackapp import app, db
 
-from .models import Location, User, Address, Zone, Anchor, Route
+from .models import Location, User, Address, Zone, Anchor, Route, Sesh, Climb
 
 @app.route('/')
 @app.route('/index/')
