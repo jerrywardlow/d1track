@@ -26,3 +26,9 @@ def location_home(location_id):
                             user = user,
                             location = location,
                             address = address)
+
+@app.route('/user/<int:user_id>/')
+def user_home(user_id):
+    user = User.query.get(user_id)
+    return render_template('user_home.html',
+                            user = user)
