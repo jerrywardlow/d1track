@@ -10,12 +10,12 @@ def index():
     user = User.query.get(1)
     climb = Climb.query.get(2)
     route = Route.query.get(2)
-    locations = Location.query.get(1)
+    location = Location.query.get(1)
     return render_template('index.html',
                             user = user,
                             climb = climb,
                             route = route,
-                            locations = locations)
+                            location = location)
 
 @app.route('/location/<int:location_id>/')
 def location_home(location_id):
