@@ -4,15 +4,29 @@
 
 {% block content %}
 
-<h2>Popular Locations</h2>
+<h2>Featured Location</h2>
 <hr>
 
-<div class="col-sm-4">
-    {% for location in locations %}
+<div class="col-sm-10">
     <a href='{{url_for('location_home', location_id = location.id)}}'>{{location.name}}</a>
     <p>{{location.description}}</p>
     </br>
-    {% endfor%}
+</div>
+
+<div class="row">
+    <div class="col-sm-5">
+        <h3>New Route!</h3>
+        <hr>
+        <a href='#url_for_route_home'>{{route.name}}</a> at <a href='#url_for_route.anchor.zone.location_home'>{{route.anchor.zone.location.name}}</a>
+        <p>{{route.description}}</p>
+    </div>
+
+    <div class="col-sm-5">
+        <h3>Fresh Climbs</h3>
+        <hr>
+        <a href='#url_for_climb.route_home'>{{climb.route.name}}</a> by <a href='#url_for_climb.sesh.user_home'>{{climb.sesh.user.username}}</a>
+        <p>{{climb.comment}}</p>
+    </div>
 </div>
 
 {% endblock %}
