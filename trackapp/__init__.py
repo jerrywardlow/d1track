@@ -4,15 +4,18 @@ from flask.ext.superadmin import Admin
 
 app = Flask(__name__, instance_relative_config=True)
 
+# Basic Flask configuration
 app.config.from_object('config')
 app.config.from_pyfile('config.py')
 
+# Flask-SQLAlchemy configuration
 db = SQLAlchemy(app)
 
 import trackapp.views
 import trackapp.models
 import trackapp.forms
 
+# Flask SuperAdmin
 admin = Admin(app)
 
 admin.register(models.Location, session=db.session)
