@@ -30,6 +30,21 @@ class User(db.Model):
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
 
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return self.active
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return unicode(self.id)
+
     def __repr__(self):
         return '<User: %s>' % (self.username)
 
