@@ -17,7 +17,7 @@
     <div class="col-sm-5">
         <h3>New Route!</h3>
         <hr>
-        <a href='#url_for_route_home'>{{route.name}}</a> at <a href='#url_for_route.anchor.zone.location_home'>{{route.anchor.zone.location.name}}</a>
+        <a href='{{url_for('route_home', route_id = route.id)}}'>{{route.name}}</a> at <a href='#url_for_route.anchor.zone.location_home'>{{route.anchor.zone.location.name}}</a>
         <p>{{route.description}}</p>
     </div>
 
