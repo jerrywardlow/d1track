@@ -17,14 +17,14 @@
     <div class="col-sm-5">
         <h3>New Route!</h3>
         <hr>
-        <a href='{{url_for('route_home', route_id = route.id)}}'>{{route.name}}</a> at <a href='#url_for_route.anchor.zone.location_home'>{{route.anchor.zone.location.name}}</a>
+        <a href='{{url_for('route_home', route_id = route.id)}}'>{{route.name}}</a> at <a href='{{url_for('location_home', location_id = route.anchor.zone.location.id)}}'>{{route.anchor.zone.location.name}}</a>
         <p>{{route.description}}</p>
     </div>
 
     <div class="col-sm-5">
         <h3>Fresh Climbs</h3>
         <hr>
-        <a href='#url_for_climb.route_home'>{{climb.route.name}}</a> by <a href='#url_for_climb.sesh.user_home'>{{climb.sesh.user.username}}</a>
+        <a href='{{url_for('route_home', route_id = climb.route.id)}}'>{{climb.route.name}}</a> by <a href='{{url_for('user_home', user_id = climb.sesh.user.id)}}'>{{climb.sesh.user.username}}</a>
         <p>{{climb.comment}}</p>
     </div>
 </div>
