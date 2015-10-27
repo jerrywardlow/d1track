@@ -37,4 +37,5 @@ def user_home(user_id):
 def route_home(route_id):
     route = Route.query.get(route_id)
     return render_template('route_home.html',
+                            user = user,
                             route = route)
