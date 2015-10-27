@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}{{route.name}}{% endblock %}
+
+{% block content %}
+
+<h2>{{route.name}}</h2>
+<hr>
+
+<div class="col-sm-4">
+  <p style="padding-bottom: 25px;">{{route.description}}</p>
+  <p>
+
+  route.anchor.name {{route.anchor.name}}</br>
+  route.description {{route.description}}</br>
+  route.last_update {{route.last_update}}</br>
+  </br>
+  </p>
+</div>
+
+<div class=pull-right>
+  {% if route.photo %}
+  <img src={{route.photo}}></br>
+  {% endif %}
+</div>
+
+{% endblock %}
