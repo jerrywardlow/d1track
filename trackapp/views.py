@@ -40,3 +40,11 @@ def route_home(route_id):
     return render_template('route_home.html',
                             user = user,
                             route = route)
+
+@app.route('/climb/<int:climb_id>/')
+def climb_home(climb_id):
+    user = User.query.get(1)
+    climb = Climb.query.get(climb_id)
+    return render_template('climb_home.html',
+                            user = user,
+                            climb = climb)
