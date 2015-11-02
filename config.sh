@@ -14,12 +14,12 @@ pip install requests
 pip install httplib2
 pip install pyimgur
 
-# Copy vagrant shared directory to /var/www/u2track
-mkdir /var/www/u2track
-cp -r /vagrant/* /var/www/u2track
+# Copy vagrant shared directory to /var/www/d1track
+mkdir /var/www/d1track
+cp -r /vagrant/* /var/www/d1track
 
 # Overwrite mod-wsgi configuration with custom configuration
-cp /var/www/u2track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf
+cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf
 
 # Restart Apache
 apache2ctl restart

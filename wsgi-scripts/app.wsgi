@@ -1,5 +1,5 @@
 import sys
 
-sys.path.insert(0, '/var/www/u2track')
+sys.path.insert(0, '/var/www/d1track')
 
 from trackapp import app as application
