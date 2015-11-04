@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.login import LoginManager
 from flask.ext.superadmin import Admin
 
 app = Flask(__name__, instance_relative_config=True)
@@ -10,6 +11,10 @@ app.config.from_pyfile('config.py')
 
 # Flask-SQLAlchemy configuration
 db = SQLAlchemy(app)
+
+# Flask-Login configuration
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 import trackapp.views
 import trackapp.models
