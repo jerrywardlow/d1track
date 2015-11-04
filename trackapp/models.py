@@ -1,5 +1,7 @@
 from . import db
 
+from flask.ext.login import UserMixin
+
 from datetime import datetime
 
 class Location(db.Model):
@@ -12,7 +14,7 @@ class Location(db.Model):
     def __repr__(self):
         return '<Location: %s>' % (self.name)
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
     email = db.Column(db.String, unique=True)
@@ -29,21 +31,6 @@ class User(db.Model):
     photo = db.Column(db.String)
     active = db.Column(db.Boolean, default=True)
     created_on = db.Column(db.DateTime, default=datetime.now)
-
-    @property
-    def is_authenticated(self):
-        return True
-
-    @property
-    def is_active(self):
-        return self.active
-
-    @property
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        return unicode(self.id)
 
     def __repr__(self):
         return '<User: %s>' % (self.username)
