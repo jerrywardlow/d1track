@@ -1,6 +1,6 @@
-from flask import render_template, session, url_for, redirect
+from flask import render_template, session, url_for, redirect, request, abort
 
-from trackapp import app, db
+from trackapp import app, db, login_manager
 
 from .models import Location, User, Address, Zone, Anchor, Route, Sesh, Climb
 
@@ -16,6 +16,19 @@ def index():
                             climb = climb,
                             route = route,
                             location = location)
+
+@app.route('/login/')
+def login():
+    pass
+
+@app.route('/register/', methods=['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template(register.html)
+    elif request.method == 'POST':
+        pass
+    else:
+        abort(405)
 
 @app.route('/location/<int:location_id>/')
 def location_home(location_id):
