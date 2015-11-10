@@ -41,7 +41,7 @@ class Address(db.Model):
     address2 = db.Column(db.String)
     city = db.Column(db.String)
     state = db.Column(db.String)
-    zipcode = db.Column(db.Integer)
+    zipcode = db.Column(db.String)
     phone = db.Column(db.String) # Can expand to a phone table for multiples
     email = db.Column(db.String) # Can expand to email table for multiples
     website = db.Column(db.String)
