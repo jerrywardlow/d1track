@@ -6,22 +6,22 @@
 
 <h2>{{route.name}}</h2>
 <hr>
+<div class="row">
+    <div class="col-sm-6">
+      <p style="padding-bottom: 25px;">{{route.description}}</p>
+      <p>
 
-<div class="col-sm-4">
-  <p style="padding-bottom: 25px;">{{route.description}}</p>
-  <p>
+      route.anchor.name {{route.anchor.name}}</br>
+      route.description {{route.description}}</br>
+      route.last_update {{route.last_update}}</br>
+      </br>
+      </p>
+    </div>
 
-  route.anchor.name {{route.anchor.name}}</br>
-  route.description {{route.description}}</br>
-  route.last_update {{route.last_update}}</br>
-  </br>
-  </p>
+    <div class="col-sm-6">
+      {% if route.photo %}
+      <img class="img-responsive" src={{route.photo}}></br>
+      {% endif %}
+    </div>
 </div>
-
-<div class=pull-right>
-  {% if route.photo %}
-  <img src={{route.photo}}></br>
-  {% endif %}
-</div>
-
 {% endblock %}
