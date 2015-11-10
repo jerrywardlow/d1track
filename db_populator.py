@@ -188,7 +188,7 @@ route2 = Route(
     anchor_id=2,
     defined_grade=1800,
     color="Pink",
-    photo="http://i.imgur.com/IMPiNWG.jpg"
+    photo="http://i.imgur.com/3UwMAsC.jpg"
 )
 db.session.add(route2)
 db.session.commit()
