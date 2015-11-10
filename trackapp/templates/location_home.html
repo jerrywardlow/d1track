@@ -7,21 +7,22 @@
 <h2>{{location.name}}</h2>
 <hr>
 
-<div class="col-sm-4">
-  <p style="padding-bottom: 25px;">{{location.description}}</p>
-  <p>
-  {{address.address1}}</br>
-  {{address.city}}, {{address.state}} {{address.zipcode}}</br>
-  {{address.phone}}</br>
-  {{address.email}}</br>
-  </p>
-  <p>Wesbite: <a href={{address.website}}>{{location.name}}</a></p>
-</div>
+<div class="row">
+    <div class="col-sm-6">
+      <p style="padding-bottom: 25px;">{{location.description}}</p>
+      <p>
+      {{address.address1}}</br>
+      {{address.city}}, {{address.state}} {{address.zipcode}}</br>
+      {{address.phone}}</br>
+      {{address.email}}</br>
+      </p>
+      <p>Wesbite: <a href={{address.website}}>{{location.name}}</a></p>
+    </div>
 
-<div class=pull-right>
-  {% if location.photo %}
-  <img src={{location.photo}}></br>
-  {% endif %}
+    <div class="col-sm-6">
+      {% if location.photo %}
+      <img class="img-responsive" src={{location.photo}}></br>
+      {% endif %}
+    </div>
 </div>
-
 {% endblock %}
