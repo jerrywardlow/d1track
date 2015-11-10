@@ -9,14 +9,17 @@
 
 <div class="row">
     <div class="col-sm-6">
-      <p style="padding-bottom: 25px;">{{location.description}}</p>
-      <p>
-      {{address.address1}}</br>
-      {{address.city}}, {{address.state}} {{address.zipcode}}</br>
-      {{address.phone}}</br>
-      {{address.email}}</br>
-      </p>
-      <p>Wesbite: <a href={{address.website}}>{{location.name}}</a></p>
+        <p style="padding-bottom: 25px;">{{location.description}}</p>
+        <p>
+        {{address.address1}}</br>
+        {{address.city}}, {{address.state}} {{address.zipcode}}
+        <small>
+            <a href="http://maps.google.com/?q={{address.address1}}, {{address.city}}, {{address.state}}, {{address.zipcode}}">Map It!</a></br>
+        </small>
+        {{address.phone}}</br>
+        {{address.email}}</br>
+        </p>
+        <p>Website: <a href={{address.website}}>{{location.name}}</a></p>
     </div>
 
     <div class="col-sm-6">
