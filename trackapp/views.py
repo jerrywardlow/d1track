@@ -8,8 +8,8 @@ from .models import Location, User, Address, Zone, Anchor, Route, Sesh, Climb
 @app.route('/index/')
 def index():
     user = User.query.get(1)
-    climb = Climb.query.get(3)
-    route = Route.query.get(2)
+    climb = Climb.query.get(1)
+    route = Route.query.get(1)
     location = Location.query.get(1)
     return render_template('index.html',
                             user = user,
