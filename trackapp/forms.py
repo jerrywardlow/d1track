@@ -6,3 +6,15 @@ class RegistrationForm(Form):
     username = StringField('Username', validators=[InputRequired('Please choose a username'), Length(min=4, max=30)])
     email = StringField('Email Address', validators=[InputRequired('Please enter a valid e-mail address'), Email('Please enter a valid e-mail address')])
     accept_rules = BooleanField('I accept the site rules', validators=[InputRequired()])
+
+class UserProfileForm(Form):
+    username = StringField()
+    email = StringField()
+    fullname = StringField()
+    gender = StringField()
+    height = FloatField()
+    wingspan = FloatField()
+    shoesize = FloatField()
+    # homegym
+    blurb = TextAreaField()
+    photo = StringField()
