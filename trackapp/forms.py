@@ -17,4 +17,14 @@ class UserProfileForm(Form):
     shoesize = FloatField()
     # homegym
     blurb = TextAreaField()
-    photo = StringField()
+    photo = StringField() # This should actually be an Imgur Uploadr
+
+class AddressForm(Form):
+    address1 = StringField()
+    address2 = StringField()
+    city = StringField()
+    state = StringField()
+    zipcode = StringField()
+    phone = StringField()
+    email = StringField()
+    website = StringField()
