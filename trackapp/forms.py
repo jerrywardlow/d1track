@@ -28,3 +28,10 @@ class AddressForm(Form):
     phone = StringField()
     email = StringField()
     website = StringField()
+
+class ClimbForm(Form):
+    route = # selection
+    success = BooleanField()
+    user_grade = # selection
+    user_rating = # selection
+    comment = StringField()
