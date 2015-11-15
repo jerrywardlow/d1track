@@ -4,6 +4,8 @@ from trackapp import app, db, login_manager
 
 from .models import Location, User, Address, Zone, Anchor, Route, Sesh, Climb
 
+from .forms import RegistrationForm, UserProfileForm, AddressForm, ClimbForm
+
 @app.route('/')
 @app.route('/index/')
 def index():
@@ -19,7 +21,11 @@ def index():
 
 @app.route('/login/')
 def login():
-    pass
+    user = User.query.get(1)
+    form = RegistrationForm()
+    return render_template('login.html',
+                            user = user,
+                            form = form)
 
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
