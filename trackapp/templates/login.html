@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {{form.username.label}} {{form.username()}}</br>
+    {{form.email.label}} {{form.email}}</br>
+    {{form.accept_rules.label}} {{form.accept_rules}} </br>
+    {{form.submit()}}
+</form>
+
+{% endblock %}
