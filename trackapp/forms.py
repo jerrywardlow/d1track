@@ -30,8 +30,8 @@ class AddressForm(Form):
     website = StringField()
 
 class ClimbForm(Form):
-    route = # selection
+    # route = selection?
     success = BooleanField()
-    user_grade = # selection
-    user_rating = # selection
+    # user_grade = selection?
+    # user_rating = selection?
     comment = StringField()
