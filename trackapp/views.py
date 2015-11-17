@@ -19,7 +19,7 @@ def index():
                             route = route,
                             location = location)
 
-@app.route('/login/')
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
     user = User.query.get(1)
     form = RegistrationForm()
