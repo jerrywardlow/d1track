@@ -14,10 +14,6 @@ pip install requests
 pip install httplib2
 pip install pyimgur
 
-# Copy vagrant shared directory to /var/www/d1track
-mkdir /var/www/d1track
-cp -r /vagrant/* /var/www/d1track
-
 # Overwrite mod-wsgi configuration with custom configuration
 cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf
 
@@ -31,7 +27,7 @@ su vagrant -c 'createdb'
 su vagrant -c 'createdb trackdb'
 
 # Run `db_populator.py` to initialize tables and populate with sample data
-su vagrant -c 'python /vagrant/db_populator.py'
+su vagrant -c 'python /var/www/d1track/db_populator.py'
 
 # Add to '.bash_profile' to change to shared directory on SSH
 echo 'cd /vagrant' > /home/vagrant/.bash_profile
