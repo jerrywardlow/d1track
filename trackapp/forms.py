@@ -9,8 +9,8 @@ class RegistrationForm(Form):
     submit = SubmitField('Submit')
 
 class UserProfileForm(Form):
-    username = StringField()
-    email = StringField()
+    username = StringField('Username', validators=[InputRequired('Please choose a username'), Length(min=4, max=30)])
+    email = StringField('Email Address', validators=[InputRequired('Please enter a valid e-mail address'), Email('Please enter a valid e-mail address')])
     fullname = StringField()
     gender = StringField()
     height = FloatField()
