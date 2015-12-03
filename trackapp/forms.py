@@ -1,6 +1,6 @@
 from flask.ext.wtf import Form
 from wtforms import BooleanField, StringField, FloatField, TextAreaField, SubmitField
-from wtforms.validators import Length, InputRequired, Email
+from wtforms.validators import Length, InputRequired, Email, Optional
 
 class RegistrationForm(Form):
     username = StringField('Username', validators=[InputRequired('Please choose a username'), Length(min=4, max=30)])
@@ -12,12 +12,12 @@ class UserProfileForm(Form):
     username = StringField('Username', validators=[InputRequired('Please choose a username'), Length(min=4, max=30)])
     email = StringField('Email Address', validators=[InputRequired('Please enter a valid e-mail address'), Email('Please enter a valid e-mail address')])
     fullname = StringField()
-    gender = StringField()
-    height = FloatField()
-    wingspan = FloatField()
-    shoesize = FloatField()
+    gender = StringField('Gender', validators=[Optional()])
+    height = FloatField() # Need to consider how data is stored to create validator. Centimeters? Inches?
+    wingspan = FloatField() # Same considerations as 'height'
+    shoesize = FloatField() # Max of Euro 49/American 16?
     # homegym
-    blurb = TextAreaField()
+    blurb = TextAreaField() # Maximum length?
     photo = StringField() # This should actually be an Imgur Uploadr
 
 class AddressForm(Form):
