@@ -40,6 +40,8 @@ def register():
 def location_home(location_id):
     user = User.query.get(1)
     location = Location.query.get(location_id)
+    if not location:
+        abort(404)
     address = Address.query.filter_by(location_id=location_id).first()
     return render_template('location_home.html',
                             user = user,
@@ -49,6 +51,8 @@ def location_home(location_id):
 @app.route('/user/<int:user_id>/')
 def user_home(user_id):
     user = User.query.get(user_id)
+    if not user:
+        abort(404)
     return render_template('user_home.html',
                             user = user)
 
@@ -56,6 +60,8 @@ def user_home(user_id):
 def route_home(route_id):
     user = User.query.get(1)
     route = Route.query.get(route_id)
+    if not route:
+        abort(404)
     return render_template('route_home.html',
                             user = user,
                             route = route)
@@ -64,6 +70,8 @@ def route_home(route_id):
 def climb_home(climb_id):
     user = User.query.get(1)
     climb = Climb.query.get(climb_id)
+    if not climb:
+        abort(404)
     return render_template('climb_home.html',
                             user = user,
                             climb = climb)
