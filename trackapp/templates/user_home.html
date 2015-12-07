@@ -7,8 +7,24 @@
 <h2>{{user.username}}</h2>
 <hr>
 
-<p>{{user.photo}}</p>
-<p>{{user.fullname}}</p>
-<p>{{user.blurb}}</p>
+<div class="row">
+    <div class="col-sm-6">
+        <p style="padding-bottom: 25px;">{{user.blurb}}</p>
+        <p>
 
+        user.username: {{user.username}}</br>
+        user.fullname: {{user.fullname}}</br>
+        user.email: {{user.email}}</br>
+        user.created_on: {{user.created_on}}</br>
+        {{user.__repr__}}
+        </br>
+        </p>
+    </div>
+
+    <div class="col-sm-6">
+        {% if user.photo %}
+        <img class="img-responsive" src={{user.photo}}></br>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
