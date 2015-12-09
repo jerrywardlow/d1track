@@ -36,6 +36,14 @@ def register():
     else:
         abort(405)
 
+@app.route('/locations/')
+def location_list():
+    user = User.query.get(1)
+    locations = Location.query.all()
+    return render_template('locations.html',
+                            user = user,
+                            locations = locations)
+
 @app.route('/location/<int:location_id>/')
 def location_home(location_id):
     user = User.query.get(1)
