@@ -6,10 +6,12 @@ from .models import Location, User, Address, Zone, Anchor, Route, Sesh, Climb
 
 from .forms import RegistrationForm, UserProfileForm, AddressForm, ClimbForm
 
+TEST_USER = User.query.get(1)
+
 @app.route('/')
 @app.route('/index/')
 def index():
-    user = User.query.get(1)
+    user = TEST_USER
     climb = Climb.query.get(1)
     route = Route.query.get(1)
     location = Location.query.get(1)
@@ -21,7 +23,7 @@ def index():
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
-    user = User.query.get(1)
+    user = TEST_USER
     form = RegistrationForm()
     return render_template('login.html',
                             user = user,
@@ -38,7 +40,7 @@ def register():
 
 @app.route('/locations/')
 def location_list():
-    user = User.query.get(1)
+    user = TEST_USER
     locations = Location.query.all()
     return render_template('locations.html',
                             user = user,
@@ -46,7 +48,7 @@ def location_list():
 
 @app.route('/location/<int:location_id>/')
 def location_home(location_id):
-    user = User.query.get(1)
+    user = TEST_USER
     location = Location.query.get(location_id)
     if not location:
         abort(404)
@@ -66,7 +68,7 @@ def user_home(user_id):
 
 @app.route('/route/<int:route_id>/')
 def route_home(route_id):
-    user = User.query.get(1)
+    user = TEST_USER
     route = Route.query.get(route_id)
     if not route:
         abort(404)
@@ -76,7 +78,7 @@ def route_home(route_id):
 
 @app.route('/climb/<int:climb_id>/')
 def climb_home(climb_id):
-    user = User.query.get(1)
+    user = TEST_USER
     climb = Climb.query.get(climb_id)
     if not climb:
         abort(404)
