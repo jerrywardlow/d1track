@@ -35,8 +35,3 @@ echo 'cd /'> /home/vagrant/.bash_profile
 # Add string to the MOTD
 MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
 echo -e $MOTDblast > /etc/motd
-
-# Symlink .bash_profile if necessary
-if [ ! -f /home/vagrant/.bash_profile ]; then
-  ln -s /vagrant/.bash_profile /home/vagrant/.bash_profile
-fi
