@@ -6,7 +6,7 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="#locations">Locations</a></li>
+        <li><a href='{{url_for('location_list')}}'>Locations</a></li>
         <li><a href="#routes">Routes</a></li>
         {% if logged_in %}
         <li><a href="#userProfile">User Profile</a></li>
