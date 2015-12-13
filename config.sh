@@ -30,7 +30,7 @@ su vagrant -c 'createdb trackdb'
 su vagrant -c 'python /var/www/d1track/db_populator.py'
 
 # Add to '.bash_profile' to change to shared directory on SSH
-echo 'cd /'> /home/vagrant/.bash_profile
+echo 'cd '$1> /home/vagrant/.bash_profile
 
 # Add string to the MOTD
 MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
