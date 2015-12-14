@@ -21,16 +21,16 @@ cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-d
 apache2ctl restart
 
 # Create Postgres user Vagrant and create 'trackdb' database
-su postgres -c 'createuser -dRS vagrant'
 su postgres -c "psql -c \"CREATE USER trackingdbuser with password 'superawesomepassword';\""
+su postgres -c 'createuser -dRS vagrant'
+su postgres -c 'createdb trackdb'
 su vagrant -c 'createdb'
-su vagrant -c 'createdb trackdb'
 
 # Run `db_populator.py` to initialize tables and populate with sample data
 su vagrant -c 'python /var/www/d1track/db_populator.py'
 
 # Add to '.bash_profile' to change to shared directory on SSH
-echo 'cd '$1> /home/vagrant/.bash_profile
+echo 'cd '$1 > /home/vagrant/.bash_profile
 
 # Add string to the MOTD
 MOTDblast="[36m[1mThis is a placeholder for the MOTD[m"
