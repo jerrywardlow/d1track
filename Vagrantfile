@@ -4,7 +4,7 @@
 nodes = [
     { hostname: "app",
       box: "ubuntu/trusty64",
-      config: "config.sh",
+      config: "provision/app.sh",
       ip: "172.22.22.201",
       synchost: ".",
       syncguest: "/var/www/d1track"
