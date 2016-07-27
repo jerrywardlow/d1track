@@ -1,18 +1,11 @@
 apt-get -qqy update
-apt-get -qqy install apache2
-apt-get -qqy install libapache2-mod-wsgi
-apt-get -qqy install postgresql python-psycopg2
-apt-get -qqy install python-pip
+apt-get -qqy install apache2 \
+                     libapache2-mod-wsgi \
+                     postgresql python-psycopg2 \
+                     python-pip
 
 # PIP installs
-pip install flask
-pip install Flask-SQLAlchemy
-pip install Flask-WTF
-pip install Flask-SuperAdmin
-pip install flask-login
-pip install requests
-pip install httplib2
-pip install pyimgur
+pip install -r /var/www/d1track/provision/requirements.txt
 
 # Overwrite mod-wsgi configuration with custom configuration
 cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf

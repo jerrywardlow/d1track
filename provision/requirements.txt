@@ -1,0 +1,8 @@
+flask
+Flask-SQLAlchemy
+Flask-WTF
+Flask-SuperAdmin
+flask-login
+requests
+httplib2
+pyimgur
