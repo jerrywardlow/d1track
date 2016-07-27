@@ -21,6 +21,3 @@ su vagrant -c 'createdb'
 
 # Run `db_populator.py` to initialize tables and populate with sample data
 su vagrant -c 'python /var/www/d1track/db_populator.py'
-
-# Add to '.bash_profile' to change to shared directory on SSH
-echo 'cd '$1 > /home/vagrant/.bash_profile
