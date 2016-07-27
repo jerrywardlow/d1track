@@ -2,14 +2,22 @@
 # vi: set ft=ruby :
 
 nodes = [
-    { :hostname => "d1track", :box => "ubuntu/trusty64", :config => "config.sh", :ip => "172.28.128.101", :synchost => ".", :syncguest => "/var/www/d1track"}
+    { hostname: "app",
+      box: "ubuntu/trusty64",
+      config: "config.sh",
+      ip: "172.22.22.201",
+      synchost: ".",
+      syncguest: "/var/www/d1track"
+    }
 ]
 
 Vagrant.configure(2) do |config|
-    config.hostmanager.enabled = true
+    if Vagrant.has_plugin?("vagrant-hostmanager")
+      config.hostmanager.enabled = true
+    end
     nodes.each do |node|
         config.vm.define node[:hostname] do |nodeconfig|
-            nodeconfig.vm.provision :shell, path: node[:config], :args => node[:syncguest]
+            nodeconfig.vm.provision :shell, path: node[:config], args: node[:syncguest]
             nodeconfig.vm.box = node[:box]
             nodeconfig.vm.hostname = node[:hostname]
             nodeconfig.vm.network :private_network, ip: node[:ip]
