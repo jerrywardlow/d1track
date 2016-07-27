@@ -14,7 +14,7 @@ cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-d
 apache2ctl restart
 
 # Create Postgres user Vagrant and create 'trackdb' database
-su postgres -c "psql -c \"CREATE USER trackingdbuser with password 'superawesomepassword';\""
+su postgres -c "psql -c \"CREATE USER pgdbuser with password 'pgpassword';\""
 su postgres -c 'createuser -dRS vagrant'
 su postgres -c 'createdb trackdb'
 su vagrant -c 'createdb'
