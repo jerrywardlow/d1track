@@ -5,7 +5,7 @@ apt-get -qqy install apache2 \
                      python-pip
 
 # PIP installs
-pip install -r /var/www/d1track/provision/requirements.txt
+pip install -r /var/www/d1track/trackapp/requirements.txt
 
 # Overwrite mod-wsgi configuration with custom configuration
 cp /var/www/d1track/wsgi-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf
