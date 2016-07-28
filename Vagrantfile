@@ -6,7 +6,7 @@ nodes = [
       box: "ubuntu/trusty64",
       config: "provision/app.sh",
       ip: "172.22.22.201",
-      synchost: ".",
+      synchost: "application/",
       syncguest: "/var/www/d1track"
     }
 ]
