@@ -7,7 +7,7 @@ nodes = [
       config: "provision/app.sh",
       ip: "172.22.22.201",
       synchost: "application/",
-      syncguest: "/var/www/d1track"
+      syncguest: "/var/www/tracking-app"
     }
 ]
 
