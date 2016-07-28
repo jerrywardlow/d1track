@@ -13,12 +13,9 @@ RUN apk update \
     && sed -i 's/pgdbuser/postgres/' trackapp/config.py \
     && sed -i 's/pgpassword/postgres/' trackapp/config.py \
     && sed -i 's/localhost/postgres/' trackapp/config.py \
-    && sed -i 's/trackdb/postgres/' trackapp/config.py \
-    && python db_populator.py
+    && sed -i 's/trackdb/postgres/' trackapp/config.py
 
 # Need to set POSTGRES_PASSWORD in compose
-
-WORKDIR /application/wsgi-scripts
 
 EXPOSE 5000
 
