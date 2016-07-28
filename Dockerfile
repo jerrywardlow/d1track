@@ -11,7 +11,7 @@ RUN apk update \
                py-psycopg2 \
     && pip install -r trackapp/requirements.txt \
     && sed -i 's/pgdbuser/postgres/' trackapp/config.py \
-    && sed -i 's/pgpasssword/postgres/' trackapp/config.py \
+    && sed -i 's/pgpassword/postgres/' trackapp/config.py \
     && sed -i 's/localhost/postgres/' trackapp/config.py \
     && sed -i 's/trackdb/postgres/' trackapp/config.py \
     && python db_populator.py
