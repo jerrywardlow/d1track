@@ -15,8 +15,6 @@ RUN apk update \
     && sed -i 's/localhost/postgres/' trackapp/config.py \
     && sed -i 's/trackdb/postgres/' trackapp/config.py
 
-# Need to set POSTGRES_PASSWORD in compose
-
 EXPOSE 5000
 
 CMD gunicorn -b 0.0.0.0:5000 wsgi:app
