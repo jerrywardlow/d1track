@@ -1,3 +1,7 @@
+# Copy synced folder to project directory
+cp -r /tracking-app/ /var/www/tracking-app/
+
+# Package installs
 apt-get -qqy update
 apt-get -qqy install apache2 \
                      libapache2-mod-wsgi \
