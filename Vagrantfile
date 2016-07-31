@@ -14,7 +14,7 @@ nodes = [
       box: "ubuntu/trusty64",
       config: "provision/db.sh",
       ip: "172.22.22.202",
-      synchost: "database/"
+      synchost: "database/",
       syncguest: "/db"
     }
 ]
