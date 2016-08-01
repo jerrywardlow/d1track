@@ -2,13 +2,6 @@
 # vi: set ft=ruby :
 
 nodes = [
-    { hostname: "app",
-      box: "ubuntu/trusty64",
-      config: "provision/app.sh",
-      ip: "172.22.22.201",
-      synchost: "application/",
-      syncguest: "/tracking-app"
-    },
     {
       hostname: "db",
       box: "ubuntu/trusty64",
@@ -16,6 +9,14 @@ nodes = [
       ip: "172.22.22.202",
       synchost: "database/",
       syncguest: "/db"
+    },
+    {
+      hostname: "app",
+      box: "ubuntu/trusty64",
+      config: "provision/app.sh",
+      ip: "172.22.22.201",
+      synchost: "application/",
+      syncguest: "/tracking-app"
     }
 ]
 
