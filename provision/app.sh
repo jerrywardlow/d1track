@@ -1,4 +1,5 @@
 # Copy synced folder to project directory
+mkdir /var/www/tracking-app/
 cp -r /tracking-app/ /var/www/tracking-app/
 
 # Package installs
