@@ -6,7 +6,7 @@ cp -a /tracking-app/ /var/www
 apt-get -qqy update
 apt-get -qqy install apache2 \
                      libapache2-mod-wsgi \
-                     postgresql python-psycopg2 \
+                     python-psycopg2 \
                      python-pip
 
 # PIP installs
@@ -19,10 +19,10 @@ cp /var/www/tracking-app/apache-scripts/mod-wsgi.conf  /etc/apache2/sites-enable
 apache2ctl restart
 
 # Create Postgres user Vagrant and create 'trackdb' database
-su postgres -c "psql -c \"CREATE USER pgdbuser with password 'pgpassword';\""
-su postgres -c 'createuser -dRS vagrant'
-su postgres -c 'createdb trackdb'
-su vagrant -c 'createdb'
+#su postgres -c "psql -c \"CREATE USER pgdbuser with password 'pgpassword';\""
+#su postgres -c 'createuser -dRS vagrant'
+#su postgres -c 'createdb trackdb'
+#su vagrant -c 'createdb'
 
 # Run `db_populator.py` to initialize tables and populate with sample data
 su vagrant -c 'python /var/www/tracking-app/db_populator.py'
