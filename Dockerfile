@@ -12,7 +12,7 @@ RUN apk update \
     && pip install -r trackapp/requirements.txt \
     && sed -i 's/pgdbuser/postgres/' trackapp/config.py \
     && sed -i 's/pgpassword/postgres/' trackapp/config.py \
-    && sed -i 's/localhost/postgres/' trackapp/config.py \
+    && sed -i 's/db/postgres/' trackapp/config.py \
     && sed -i 's/trackdb/postgres/' trackapp/config.py
 
 EXPOSE 5000
