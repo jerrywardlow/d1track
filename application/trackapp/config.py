@@ -6,7 +6,7 @@ WTF_CSRF_ENABLED = True
 db_driver = 'postgresql'
 db_user = 'pgdbuser'
 db_password = 'pgpassword'
-db_host = 'db' # Our database server, named 'db'
+db_host = 'postgres' # Our database server
 db_port = '5432'
 db_name = 'trackdb'
 

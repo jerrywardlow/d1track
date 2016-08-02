@@ -3,7 +3,7 @@
 
 nodes = [
     {
-      hostname: "db",
+      hostname: "postgres",
       box: "ubuntu/trusty64",
       config: "provision/db.sh",
       ip: "172.22.22.202",
