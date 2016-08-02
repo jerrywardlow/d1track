@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    build: .
+    build: ./application
     image: tracking-app
     ports:
       - "5000:5000"

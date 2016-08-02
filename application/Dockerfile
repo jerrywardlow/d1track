@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-COPY application/ /application
+COPY . /application
 
 WORKDIR /application
 
