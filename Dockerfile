@@ -9,10 +9,7 @@ RUN apk update \
                py-gunicorn \
                py-pip \
                py-psycopg2 \
-    && pip install -r trackapp/requirements.txt \
-    && sed -i 's/pgdbuser/postgres/' trackapp/config.py \
-    && sed -i 's/pgpassword/postgres/' trackapp/config.py \
-    && sed -i 's/trackdb/postgres/' trackapp/config.py
+    && pip install -r trackapp/requirements.txt
 
 EXPOSE 5000
 
