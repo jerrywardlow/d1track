@@ -13,3 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - ./database/trackdb.sql:/docker-entrypoint-initdb.d/trackdb.sql
+    environvment:
+      POSTGRES_USER: pgdbuser
+      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_DB: trackdb
