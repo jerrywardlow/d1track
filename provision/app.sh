@@ -18,11 +18,5 @@ cp /var/www/tracking-app/apache-scripts/mod-wsgi.conf  /etc/apache2/sites-enable
 # Restart Apache
 apache2ctl restart
 
-# Create Postgres user Vagrant and create 'trackdb' database
-#su postgres -c "psql -c \"CREATE USER pgdbuser with password 'pgpassword';\""
-#su postgres -c 'createuser -dRS vagrant'
-#su postgres -c 'createdb trackdb'
-#su vagrant -c 'createdb'
-
 # Run `db_populator.py` to initialize tables and populate with sample data
 su vagrant -c 'python /var/www/tracking-app/db_populator.py'
