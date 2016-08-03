@@ -10,7 +10,7 @@ apt-get -qqy install apache2 \
                      python-pip
 
 # PIP installs
-pip install -r /var/www/tracking-app/trackapp/requirements.txt
+pip install -r /var/www/tracking-app/requirements.txt
 
 # Overwrite mod-wsgi configuration with custom configuration
 cp /var/www/tracking-app/apache-scripts/mod-wsgi.conf  /etc/apache2/sites-enabled/000-default.conf

@@ -9,7 +9,7 @@ RUN apk update \
                py-gunicorn \
                py-pip \
                py-psycopg2 \
-    && pip install -r trackapp/requirements.txt
+    && pip install -r requirements.txt
 
 EXPOSE 5000
 
