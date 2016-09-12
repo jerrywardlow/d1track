@@ -6,7 +6,7 @@ nodes = [
       hostname: "postgres",
       box: "ubuntu/trusty64",
       config: "provision/db.sh",
-      ip: "172.22.22.202",
+      ip: "192.168.56.202",
       synchost: "database/",
       syncguest: "/db"
     },
@@ -14,7 +14,7 @@ nodes = [
       hostname: "app",
       box: "ubuntu/trusty64",
       config: "provision/app.sh",
-      ip: "172.22.22.201",
+      ip: "192.168.56.201",
       synchost: "application/",
       syncguest: "/tracking-app"
     }
